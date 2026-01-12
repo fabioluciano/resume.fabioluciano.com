@@ -4,7 +4,7 @@ $schema: "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/sche
 basics:
   name: "Fábio Luciano Nogueira de Góis"
   image: "photo.jpg"
-  email: "ola@fabioluciano.dev"
+  email: "me@fabioluciano.com"
   phone: "+55 (61) 981455884"
   url: "https://fabioluciano.com"
   location:
@@ -14,7 +14,7 @@ basics:
   profiles:
     - network: "Blog"
       username: "fabioluciano"
-      url: "https://log.fabioluciano.dev"
+      url: "https://fabioluciano.com"
     - network: "GitHub"
       username: "fabioluciano"
       url: "https://github.com/fabioluciano"
