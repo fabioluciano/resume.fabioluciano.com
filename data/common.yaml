@@ -1,30 +1,15 @@
 $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
 basics:
-<<<<<<< HEAD
   name: "Fábio Luciano Nogueira de Góis"
   image: "photo.jpg"
   email: "me@fabioluciano.com"
   phone: "+55 (61) 981455884"
   url: "https://fabioluciano.com"
-||||||| parent of 60f863b (feat: Revamp resume templates and styles for Vibrante theme)
-  name: "Fábio Luciano Nogueira de Góis"
-  image: "photo.jpg"
-  email: "ola@fabioluciano.dev"
-  phone: "+55 (61) 981455884"
-  url: "https://fabioluciano.com"
-=======
-  name: Fábio Luciano Nogueira de Góis
-  image: photo.jpg
-  email: ola@fabioluciano.dev
-  phone: +55 (61) 981455884
-  url: https://fabioluciano.com
->>>>>>> 60f863b (feat: Revamp resume templates and styles for Vibrante theme)
   location:
     city: Brasília
     countryCode: BR
     region: Distrito Federal
   profiles:
-<<<<<<< HEAD
     - network: "Blog"
       username: "fabioluciano"
       url: "https://fabioluciano.com"
@@ -42,41 +27,6 @@ basics:
       url: "https://t.me/fabioluciano"
 
 # Certifications - all data is common (names, dates, issuers, URLs)
-||||||| parent of 60f863b (feat: Revamp resume templates and styles for Vibrante theme)
-    - network: "Blog"
-      username: "fabioluciano"
-      url: "https://log.fabioluciano.dev"
-    - network: "GitHub"
-      username: "fabioluciano"
-      url: "https://github.com/fabioluciano"
-    - network: "LinkedIn"
-      username: "fabioluciano"
-      url: "https://www.linkedin.com/in/fabioluciano"
-    - network: "Twitter"
-      username: "fabioluciano"
-      url: "https://twitter.com/fabioluciano"
-    - network: "Telegram"
-      username: "fabioluciano"
-      url: "https://t.me/fabioluciano"
-
-# Certifications - all data is common (names, dates, issuers, URLs)
-=======
-  - network: Blog
-    username: fabioluciano
-    url: https://log.fabioluciano.dev
-  - network: GitHub
-    username: fabioluciano
-    url: https://github.com/fabioluciano
-  - network: LinkedIn
-    username: fabioluciano
-    url: https://www.linkedin.com/in/fabioluciano
-  - network: Twitter
-    username: fabioluciano
-    url: https://twitter.com/fabioluciano
-  - network: Telegram
-    username: fabioluciano
-    url: https://t.me/fabioluciano
->>>>>>> 60f863b (feat: Revamp resume templates and styles for Vibrante theme)
 certificates:
 - name: Kubestronaut
   date: 2024-11
