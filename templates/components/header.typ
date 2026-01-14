@@ -16,7 +16,7 @@
     #align(center)[
       #text(size: size-name-full, weight: "bold", fill: color-primary, tracking: tracking-wide)[#data.basics.name]
       #v(-2em)
-      #text(size: size-label-full, fill: color-secondary, weight: "medium", tracking: tracking-tight)[#data.basics.label]
+      #text(size: size-label-full, fill: color-text, weight: "medium", tracking: tracking-tight)[#data.basics.label]
     ]
     #v(0.4em)
 
