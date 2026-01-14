@@ -1,6 +1,7 @@
 // Header Component
 // Unified header with variant support for full and onepage templates
 // Usage: #import "components/header.typ": header-full, header-onepage
+// Theme: Vibrante (matching fabioluciano.com blog)
 
 #import "../design.typ": *
 #import "../i18n.typ": t
@@ -13,9 +14,9 @@
   block(width: 100%, above: 0pt, below: 0.4em)[
     // Name and label (centered)
     #align(center)[
-      #text(size: size-name-full, weight: "bold", fill: color-text-bold, tracking: tracking-wide)[#data.basics.name]
+      #text(size: size-name-full, weight: "bold", fill: color-primary, tracking: tracking-wide)[#data.basics.name]
       #v(-2em)
-      #text(size: size-label-full, fill: color-primary, weight: "medium", tracking: tracking-tight)[#data.basics.label]
+      #text(size: size-label-full, fill: color-secondary, weight: "medium", tracking: tracking-tight)[#data.basics.label]
     ]
     #v(0.4em)
 
@@ -30,7 +31,7 @@
         columns: (1fr, 1fr, 1fr),
         gutter: 0pt,
         align: (center + horizon, left + horizon, left + horizon),
-        // Photo (left)
+        // Photo (left) with vibrante border
         [
           #if data.basics.at("image", default: none) != none {
             profile-photo("/data/" + data.basics.image, size: 80pt)
@@ -59,7 +60,7 @@
             #v(0.3em)
             #text(size: size-date-full)[
               #for profile in data.basics.profiles [
-                #nf-icon(get-social-icon(profile.network), size: size-date-full, color: color-accent) #link(profile.url)[#text(fill: color-accent)[#profile.network]]
+                #nf-icon(get-social-icon(profile.network), size: size-date-full, color: color-primary) #link(profile.url)[#text(fill: color-primary)[#profile.network]]
                 #linebreak()
               ]
             ]
@@ -91,25 +92,25 @@
       [
         #text(size: size-small-onepage, fill: color-header-text, weight: "bold")[
           #nf-icon(icon-email, size: size-small-onepage, color: color-header-text) #data.basics.email
-          #linebreak()
+          #v(-0.3em)
           #nf-icon(icon-phone, size: size-small-onepage, color: color-header-text) #data.basics.phone
-          #linebreak()
+          #v(-0.3em)
           #nf-icon(icon-location, size: size-small-onepage, color: color-header-text) #data.basics.location.city
         ]
       ],
       [
         #text(size: size-name-onepage, weight: "bold", fill: white, tracking: tracking-normal)[#data.basics.name]
         #v(-1.8em)
-        #text(size: size-label-onepage, fill: color-header-accent, weight: "medium")[#data.basics.label]
+        #text(size: size-label-onepage, fill: white, weight: "medium")[#data.basics.label]
       ],
       [
         #text(size: size-small-onepage, fill: color-header-text, weight: "bold")[
           #let profile-links = data.basics.profiles.map(p => [
-            #nf-icon(get-social-icon(p.network), size: size-small-onepage, color: color-header-text) #link(p.url)[#p.network]
+            #nf-icon(get-social-icon(p.network), size: size-small-onepage, color: color-header-text) #h(0.2em) #link(p.url)[#p.network]
           ])
           #profile-links.join(" │ ")
-          #linebreak()
-          #link(data.basics.url)[#nf-icon(icon-website, size: size-small-onepage, color: color-header-text) #data.basics.url]
+          #v(-0.3em)
+          #link(data.basics.url)[#nf-icon(icon-website, size: size-small-onepage, color: color-header-text) #h(0.2em) #data.basics.url]
         ]
       ]
     )

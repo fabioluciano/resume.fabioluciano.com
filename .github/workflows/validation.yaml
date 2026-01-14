@@ -19,8 +19,8 @@ jobs:
       - name: Setup Typst with Fonts
         uses: ./.github/actions/setup-typst-fonts
 
-      - name: Create output directories
-        run: mkdir -p output/en output/ptbr
+      - name: Install Just
+        uses: extractions/setup-just@v2
 
       # Install Python dependencies for JSON Resume validation
       - name: Install Python dependencies
@@ -28,16 +28,9 @@ jobs:
           python3 -m pip install --upgrade pip
           pip3 install jsonschema PyYAML
 
-      # Validate JSON Resume schema compliance
-      - name: Validate JSON Resume Schema
-        run: |
-          echo "Validating resume files against JSON Resume schema..."
-          python3 scripts/validate_resume.py --all
-          echo "All resume files are compliant with JSON Resume schema"
-
-      # Build all resume formats for validation
-      - name: Build all resume formats (after validation)
-        run: make build
+      # Build all resume formats (includes validation)
+      - name: Build all resume formats
+        run: just all
 
       # Verify output files were created
       - name: Verify build outputs

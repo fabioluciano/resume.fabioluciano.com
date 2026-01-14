@@ -3,12 +3,15 @@
 // Components are in the components/ directory
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// COLOR PALETTE - Kubestronaut Premium Theme
+// COLOR PALETTE - Vibrante Theme (matching fabioluciano.com blog)
 // ═══════════════════════════════════════════════════════════════════════════════
 
-// Primary colors - Amber/Gold for premium feel
-#let color-primary = rgb("#b45309")       // Amber 700 - main brand color (premium gold)
-#let color-accent = rgb("#d97706")        // Amber 600 - links, highlights
+// Primary colors - Vibrante e Colorido
+#let color-primary = rgb("#8b5cf6")       // Violet 500 - main brand (roxo vibrante)
+#let color-secondary = rgb("#ec4899")     // Pink 500 - secondary (rosa vibrante)
+#let color-accent = rgb("#a855f7")        // Violet 400 - accent (violeta mais claro)
+#let color-gradient-start = rgb("#8b5cf6") // Violet para gradientes
+#let color-gradient-end = rgb("#ec4899")   // Pink para gradientes
 #let color-k8s = rgb("#326ce5")           // Kubernetes blue - ONLY for K8s certifications
 
 // Text colors - Clear hierarchy with warm slate
@@ -17,21 +20,21 @@
 #let color-muted = rgb("#64748b")         // Slate 500 - secondary text
 #let color-subtle = rgb("#94a3b8")        // Slate 400 - tertiary/hints
 
-// Background colors - Warm neutrals
-#let color-bg-light = rgb("#f8f7f4")      // Warm off-white - light background
-#let color-bg-card = rgb("#f5f4f1")       // Warm gray - card background
-#let color-bg-column = rgb("#f8f7f4")     // Column background - onepage
+// Background colors - Mostly neutral with subtle violet hint
+#let color-bg-light = rgb("#fafafa")      // Nearly white - clean background
+#let color-bg-card = rgb("#f9fafb")       // Gray 50 - subtle card background
+#let color-bg-column = rgb("#fafafa")     // Column background - onepage
 #let color-bg-white = white
 #let color-k8s-bg = rgb("#eff6ff")        // Blue 50 - K8s highlight (keep blue here)
 
-// Header colors (onepage) - Premium dark
-#let color-header-bg = rgb("#1e293b")     // Slate 800 - dark header background
-#let color-header-text = rgb("#f8f7f4")   // Warm white - header text
-#let color-header-accent = rgb("#fbbf24") // Amber 400 - header accent (gold)
+// Header colors (onepage) - Violet but not too intense
+#let color-header-bg = rgb("#7c3aed")     // Violet 600 - header background vibrante
+#let color-header-text = white            // Pure white - header text
+#let color-header-accent = rgb("#f9a8d4") // Pink 300 - header accent (contraste)
 
-// Border colors
-#let color-divider = rgb("#e7e5e4")       // Stone 200 - light border
-#let color-divider-strong = rgb("#d6d3d1") // Stone 300 - stronger border
+// Border colors - Neutral with subtle violet
+#let color-divider = rgb("#e5e7eb")       // Gray 200 - light border
+#let color-divider-strong = rgb("#d1d5db") // Gray 300 - stronger border
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // TYPOGRAPHY - Font Families

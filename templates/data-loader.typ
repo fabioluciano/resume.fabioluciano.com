@@ -9,13 +9,53 @@
   ptbr: "ptbr",
 )
 
+// Simple dictionary merge (no arrays, for items inside arrays)
+#let merge-item(target, source) = {
+  let result = target
+  for (key, value) in source {
+    result.insert(key, value)
+  }
+  result
+}
+
+// Merge arrays by index - combines common array with language-specific translations
+#let merge-arrays(common-array, lang-array) = {
+  if common-array == none { return lang-array }
+  if lang-array == none { return common-array }
+  
+  let result = ()
+  let max-len = calc.max(common-array.len(), lang-array.len())
+  
+  for i in range(max-len) {
+    let common-item = if i < common-array.len() { common-array.at(i) } else { (:) }
+    let lang-item = if i < lang-array.len() { lang-array.at(i) } else { (:) }
+    
+    if type(common-item) == dictionary and type(lang-item) == dictionary {
+      result.push(merge-item(common-item, lang-item))
+    } else if lang-item != none {
+      result.push(lang-item)
+    } else {
+      result.push(common-item)
+    }
+  }
+  
+  result
+}
+
 // Deep merge function - recursively merges dictionaries
 #let merge-dict(target, source) = {
   let result = target
 
   for (key, value) in source {
-    if key in target and type(target.at(key)) == dictionary and type(value) == dictionary {
-      result.insert(key, merge-dict(target.at(key), value))
+    if key in target {
+      let target-value = target.at(key)
+      if type(target-value) == dictionary and type(value) == dictionary {
+        result.insert(key, merge-dict(target-value, value))
+      } else if type(target-value) == array and type(value) == array {
+        result.insert(key, merge-arrays(target-value, value))
+      } else {
+        result.insert(key, value)
+      }
     } else {
       result.insert(key, value)
     }

@@ -27,13 +27,14 @@ jobs:
       - name: Setup Typst with Fonts
         uses: ./.github/actions/setup-typst-fonts
 
+      - name: Install Just
+        uses: extractions/setup-just@v2
+
       - name: Install Python dependencies
-        run: pip3 install PyYAML
+        run: pip3 install PyYAML jsonschema
 
       - name: Build resume assets
-        run: |
-          mkdir -p output/en output/ptbr
-          make all
+        run: just all
 
       - name: Create release assets
         run: |

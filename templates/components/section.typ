@@ -1,6 +1,7 @@
 // Section Title Component
 // Unified section title with variant support
 // Usage: #import "components/section.typ": section-title
+// Theme: Vibrante (matching fabioluciano.com blog)
 
 #import "../design.typ": *
 
@@ -30,7 +31,7 @@
       align: horizon,
       [
         #if icon != none and icon != "" [
-          #nf-icon(icon, size: size-icon)
+          #nf-icon(icon, size: size-icon, color: color-primary)
         ]
       ],
       [

@@ -1,5 +1,6 @@
 // Unified Card Components
 // Consolidated cards with variant support for DRY compliance
+// Theme: Vibrante (matching fabioluciano.com blog)
 // Usage: #import "components/cards.typ": education-card, language-card, cert-card, project-card, publication-card
 
 #import "../design.typ": *
@@ -30,7 +31,7 @@
     width: 100%,
     below: card-below,
   )[
-    #text(size: text-size, weight: "bold", fill: color-text-bold)[#study-type]
+    #text(size: text-size, weight: "bold", fill: color-primary)[#study-type]
     #linebreak()
     #text(size: small-size, fill: color-text)[#area]
     #linebreak()
@@ -125,7 +126,7 @@
     width: 100%,
     below: card-below,
   )[
-    #text(size: name-size, weight: "bold", fill: color-accent)[#link(url)[#name]]
+    #text(size: name-size, weight: "bold", fill: color-primary)[#link(url)[#name]]
     #linebreak()
     #text(size: desc-size, fill: color-text)[#description]
   ]
@@ -143,7 +144,7 @@
     width: 100%,
     below: 0.25em,
   )[
-    #text(size: size-small-onepage, weight: "bold", fill: color-accent)[#link(url)[#name]]
+    #text(size: size-small-onepage, weight: "bold", fill: color-primary)[#link(url)[#name]]
     #linebreak()
     #text(size: size-date-onepage, fill: color-text)[#date]
     #linebreak()

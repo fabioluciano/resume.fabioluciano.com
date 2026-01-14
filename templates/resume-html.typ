@@ -10,23 +10,24 @@
 #let data = load-resume-data(lang)
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// TAILWIND CSS CLASSES (Design Tokens)
+// TAILWIND CSS CLASSES (Design Tokens - Vibrante Theme)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 #let tw = (
-  // Primary colors - Kubestronaut Premium (Amber/Gold)
-  primary-text: "text-amber-700 dark:text-amber-500",
-  primary-border: "border-amber-700 dark:border-amber-500",
-  accent-text: "text-amber-600 dark:text-amber-400",
-  accent-hover: "hover:text-amber-800 dark:hover:text-amber-300",
+  // Primary colors - Vibrante (Violet/Orange/Pink)
+  primary-text: "text-violet-600 dark:text-violet-400",
+  primary-border: "border-violet-600 dark:border-violet-400",
+  secondary-text: "text-orange-500 dark:text-orange-400",
+  accent-text: "text-violet-600 dark:text-violet-400",
+  accent-hover: "hover:text-violet-800 dark:hover:text-violet-300",
   muted-text: "text-slate-500 dark:text-slate-400",
-  bg-card: "bg-stone-50 dark:bg-slate-800",
+  bg-card: "bg-gray-50 dark:bg-slate-800",
   // K8s specific (blue only for Kubernetes)
   k8s-text: "text-blue-600 dark:text-blue-400",
   k8s-border: "border-blue-500",
   k8s-bg: "bg-blue-50 dark:bg-blue-900/30",
-  // Section header style - Premium gold
-  section-header: "flex items-center gap-3 text-lg font-bold uppercase tracking-wider text-amber-700 dark:text-amber-500 pb-2 border-b-2 border-amber-700 dark:border-amber-500",
+  // Section header style - Vibrante violet
+  section-header: "flex items-center gap-3 text-lg font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400 pb-2 border-b-2 border-violet-500 dark:border-violet-400",
 )
 
 // Nerd Font icons for HTML (same as design.typ)
@@ -79,25 +80,25 @@
 // NAVIGATION BAR
 // ═══════════════════════════════════════════════════════════════════════════════
 
-#html.nav(class: "fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 print:hidden", aria-label: "Document options")[
+#html.nav(class: "fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-slate-700 print:hidden", aria-label: "Document options")[
   #html.div(class: "max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-4")[
     // Language Switch
     #html.div(class: "flex items-center gap-2")[
       #html.span(class: "text-xs text-slate-500 dark:text-slate-400 hidden sm:inline")[#nf-icon-html("languages") #if lang == "en" { "Language:" } else { "Idioma:" }]
       #if lang == "en" [
-        #html.span(class: "text-sm font-semibold text-slate-900 dark:text-slate-100 px-2 py-1 bg-amber-100 dark:bg-amber-900 rounded")[EN]
-        #html.a(href: "../ptbr/index.html", class: "text-sm text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-400 px-2 py-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors")[PT]
+        #html.span(class: "text-sm font-semibold text-white px-2 py-1 bg-violet-600 rounded")[EN]
+        #html.a(href: "../ptbr/index.html", class: "text-sm text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors")[PT]
       ] else [
-        #html.a(href: "../en/index.html", class: "text-sm text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-400 px-2 py-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors")[EN]
-        #html.span(class: "text-sm font-semibold text-slate-900 dark:text-slate-100 px-2 py-1 bg-amber-100 dark:bg-amber-900 rounded")[PT]
+        #html.a(href: "../en/index.html", class: "text-sm text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors")[EN]
+        #html.span(class: "text-sm font-semibold text-white px-2 py-1 bg-violet-600 rounded")[PT]
       ]
     ]
 
     // PDF Downloads
     #html.div(class: "flex items-center gap-2")[
       #html.span(class: "text-xs text-slate-500 dark:text-slate-400 hidden sm:inline")[#nf-icon-html("pdf") PDF:]
-      #html.a(href: "resume.pdf", class: "inline-flex items-center gap-1 text-xs font-medium text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 px-2 py-1 rounded border border-amber-400 dark:border-amber-700 hover:bg-amber-50 dark:hover:bg-amber-900/30 transition-colors", download: "")[#nf-icon-html("download") Full]
-      #html.a(href: "resume-onepage.pdf", class: "inline-flex items-center gap-1 text-xs font-medium text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 px-2 py-1 rounded border border-amber-400 dark:border-amber-700 hover:bg-amber-50 dark:hover:bg-amber-900/30 transition-colors", download: "")[#nf-icon-html("download") 1-Page]
+      #html.a(href: "resume.pdf", class: "inline-flex items-center gap-1 text-xs font-medium text-violet-600 dark:text-violet-400 hover:text-violet-800 dark:hover:text-violet-300 px-2 py-1 rounded border border-violet-400 dark:border-violet-700 hover:bg-violet-50 dark:hover:bg-violet-900/30 transition-colors", download: "")[#nf-icon-html("download") Full]
+      #html.a(href: "resume-onepage.pdf", class: "inline-flex items-center gap-1 text-xs font-medium text-violet-600 dark:text-violet-400 hover:text-violet-800 dark:hover:text-violet-300 px-2 py-1 rounded border border-violet-400 dark:border-violet-700 hover:bg-violet-50 dark:hover:bg-violet-900/30 transition-colors", download: "")[#nf-icon-html("download") 1-Page]
     ]
 
     // Theme Toggle
@@ -119,27 +120,49 @@
 #html.div(class: "h-14 print:hidden")[]
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// TABLE OF CONTENTS (Floating sidebar)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+#html.nav(id: "toc", class: "fixed right-12 top-1/2 -translate-y-1/2 hidden xl:block w-56 print:hidden", aria-label: "Table of contents")[
+  #html.div(class: "bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg shadow-lg border border-gray-200/50 dark:border-slate-700/50 p-4")[
+    #html.p(class: "text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3")[#if lang == "en" { "Navigation" } else { "Navegação" }]
+    #html.ul(class: "space-y-2 text-sm")[
+      #html.li[#html.a(href: "#summary-title", class: "flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors")[#nf-icon-html("summary") #t("summary", lang)]]
+      #html.li[#html.a(href: "#experience-title", class: "flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors")[#nf-icon-html("experience") #t("experience", lang)]]
+      #html.li[#html.a(href: "#education-title", class: "flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors")[#nf-icon-html("education") #t("education", lang)]]
+      #html.li[#html.a(href: "#certs-title", class: "flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors")[#nf-icon-html("certifications") #t("certifications", lang)]]
+      #html.li[#html.a(href: "#skills-title", class: "flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors")[#nf-icon-html("skills") #t("skills", lang)]]
+      #html.li[#html.a(href: "#languages-title", class: "flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors")[#nf-icon-html("languages") #t("languages", lang)]]
+      #html.li[#html.a(href: "#projects-title", class: "flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors")[#nf-icon-html("projects") #t("projects", lang)]]
+      #html.li[#html.a(href: "#publications-title", class: "flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors")[#nf-icon-html("speaking") #t("publications", lang)]]
+    ]
+  ]
+]
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // HEADER
 // ═══════════════════════════════════════════════════════════════════════════════
 
-#html.header(class: "pb-8 mb-8 border-b-2 border-slate-300", role: "banner")[
+#html.header(class: "pb-8 mb-8 border-b-2 border-gray-200 dark:border-slate-700", role: "banner")[
   // Name and label (centered)
   #html.div(class: "text-center mb-6")[
-    #html.h1(class: "text-4xl font-bold tracking-wide text-slate-900 dark:text-slate-100 mb-2")[#data.basics.name]
-    #html.p(class: "text-lg font-medium " + tw.primary-text)[#data.basics.label]
+    #html.h1(class: "text-4xl font-bold tracking-wide text-violet-600 dark:text-violet-400 mb-2")[#data.basics.name]
+    #html.p(class: "text-lg font-medium text-slate-600 dark:text-slate-300")[#data.basics.label]
   ]
 
   // Photo + Contact + Social (3 equal columns)
-  #html.div(class: tw.bg-card + " rounded-lg p-6")[
-    #html.div(class: "grid grid-cols-1 md:grid-cols-3 gap-6 md:divide-x divide-slate-300 dark:divide-slate-600")[
-      // Photo (left)
+  #html.div(class: tw.bg-card + " rounded-lg p-6 shadow-sm")[
+    #html.div(class: "grid grid-cols-1 md:grid-cols-3 gap-6 md:divide-x divide-gray-200 dark:divide-slate-600")[
+      // Photo (left) with subtle glow effect
       #html.div(class: "flex justify-center items-center")[
         #if data.basics.at("image", default: none) != none [
-          #html.img(
-            src: "../" + data.basics.image,
-            alt: data.basics.name,
-            class: "w-32 h-32 rounded-full object-cover object-top border-4 border-amber-600 shadow-lg"
-          )
+          #html.div(class: "relative")[
+            #html.img(
+              src: "../" + data.basics.image,
+              alt: data.basics.name,
+              class: "w-32 h-32 rounded-full object-cover object-top ring-4 ring-violet-500 shadow-lg"
+            )
+          ]
         ]
       ]
 
@@ -147,10 +170,10 @@
       #html.div(class: "md:pl-6")[
         #html.h3(class: "text-sm font-bold " + tw.primary-text + " mb-3")[#t("contact", lang)]
         #html.address(class: "not-italic space-y-2")[
-          #html.a(href: "mailto:" + data.basics.email, class: "flex items-center gap-2 text-sm " + tw.accent-text + " hover:text-amber-800 hover:underline")[#nf-icon-html("email") #data.basics.email]
+          #html.a(href: "mailto:" + data.basics.email, class: "flex items-center gap-2 text-sm " + tw.accent-text + " hover:text-orange-600 hover:underline")[#nf-icon-html("email") #data.basics.email]
           #html.span(class: "flex items-center gap-2 text-sm text-slate-500")[#nf-icon-html("phone") #data.basics.phone]
           #html.span(class: "flex items-center gap-2 text-sm text-slate-500")[#nf-icon-html("location") #data.basics.location.city, #data.basics.location.region]
-          #html.a(href: data.basics.url, class: "flex items-center gap-2 text-sm " + tw.accent-text + " hover:text-amber-800 hover:underline", target: "_blank")[#nf-icon-html("website") Website]
+          #html.a(href: data.basics.url, class: "flex items-center gap-2 text-sm " + tw.accent-text + " hover:text-orange-600 hover:underline", target: "_blank")[#nf-icon-html("website") Website]
         ]
       ]
 
@@ -159,7 +182,7 @@
         #html.h3(class: "text-sm font-bold " + tw.primary-text + " mb-3")[#t("social", lang)]
         #html.nav(class: "space-y-2", aria-label: "Social profiles")[
           #for profile in data.basics.profiles [
-            #html.a(href: profile.url, class: "flex items-center gap-2 text-sm font-medium " + tw.accent-text + " hover:text-amber-800 transition-colors", target: "_blank", rel: "noopener")[#nf-icon-html(profile.network) #profile.network]
+            #html.a(href: profile.url, class: "flex items-center gap-2 text-sm font-medium " + tw.accent-text + " hover:text-orange-600 transition-colors", target: "_blank", rel: "noopener")[#nf-icon-html(profile.network) #profile.network]
           ]
         ]
       ]
@@ -203,7 +226,7 @@
         #if job.at("highlights", default: none) != none and job.highlights.len() > 0 [
           #html.ul(class: "mt-3 pl-4 space-y-2")[
             #for highlight in job.highlights [
-              #html.li(class: "relative pl-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed before:content-['•'] before:absolute before:left-0 before:text-sky-500 before:font-bold")[#highlight]
+              #html.li(class: "relative pl-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed before:content-['•'] before:absolute before:left-0 before:text-violet-500 before:font-bold")[#highlight]
             ]
           ]
         ]
@@ -266,7 +289,7 @@
           #html.h3(class: "text-sm font-semibold " + tw.primary-text + " mb-2")[#skill.name]
           #html.ul(class: "flex flex-wrap gap-2")[
             #for keyword in skill.keywords [
-              #html.li(class: "text-xs " + tw.muted-text + " bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded")[#keyword]
+              #html.li(class: "text-xs text-slate-600 dark:text-slate-300 bg-gray-100 dark:bg-slate-700 px-2 py-1 rounded")[#keyword]
             ]
           ]
         ]
@@ -328,7 +351,7 @@
 // FOOTER
 // ═══════════════════════════════════════════════════════════════════════════════
 
-#html.footer(class: "mt-12 pt-6 border-t border-slate-200 dark:border-slate-700 text-center", role: "contentinfo")[
+#html.footer(class: "mt-12 pt-6 border-t border-gray-200 dark:border-slate-700 text-center", role: "contentinfo")[
   #html.p(class: "text-sm " + tw.muted-text)[
     #datetime.today().year() #data.basics.name
   ]
