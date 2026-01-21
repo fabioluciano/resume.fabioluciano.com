@@ -73,7 +73,7 @@ certificates:
   issuer: Linux Professional Institute
   url: https://cs.lpi.org/caf/Xamman/certification/verify/LPI000397664/sfuy2nckbr
 work:
-- name: SICOOB Bank
+- name: Banco SICOOB
   url: https://www.sicoob.com.br/
   startDate: 2025-06
 - name: MATERA SYSTEMS
