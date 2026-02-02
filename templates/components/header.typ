@@ -11,6 +11,9 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 
 #let header-full(data, lang: "en") = {
+  // Clean phone number for tel: links (remove spaces and parentheses)
+  let clean-phone = data.basics.phone.replace(" ", "").replace("(", "").replace(")", "")
+
   block(width: 100%, above: 0pt, below: 0.4em)[
     // Name and label (centered)
     #align(center)[
@@ -45,7 +48,7 @@
             #text(size: size-date-full, fill: color-muted)[
               #link("mailto:" + data.basics.email)[#nf-icon(icon-email, size: size-date-full, color: color-muted) #data.basics.email]
               #linebreak()
-              #nf-icon(icon-phone, size: size-date-full, color: color-muted) #data.basics.phone
+              #link("tel:" + clean-phone)[#nf-icon(icon-phone, size: size-date-full, color: color-muted) #data.basics.phone]
               #linebreak()
               #nf-icon(icon-location, size: size-date-full, color: color-muted) #data.basics.location.city, #data.basics.location.region
               #linebreak()
@@ -76,6 +79,8 @@
 // ═══════════════════════════════════════════════════════════════════════════════
 
 #let header-onepage(data, lang: "en") = {
+  // Clean phone number for tel: links (remove spaces and parentheses)
+  let clean-phone = data.basics.phone.replace(" ", "").replace("(", "").replace(")", "")
   let header-columns = (auto, 1fr, 2fr, 1fr)
 
   block(width: 100%, fill: color-header-bg, radius: radius-large, inset: inset-header-onepage, below: 0.4em)[
@@ -93,7 +98,7 @@
         #text(size: size-small-onepage, fill: color-header-text, weight: "bold")[
           #nf-icon(icon-email, size: size-small-onepage, color: color-header-text) #data.basics.email
           #v(-0.3em)
-          #nf-icon(icon-phone, size: size-small-onepage, color: color-header-text) #data.basics.phone
+          #link("tel:" + clean-phone)[#nf-icon(icon-phone, size: size-small-onepage, color: color-header-text) #data.basics.phone]
           #v(-0.3em)
           #nf-icon(icon-location, size: size-small-onepage, color: color-header-text) #data.basics.location.city
         ]

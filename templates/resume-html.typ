@@ -9,6 +9,9 @@
 #let lang = sys.inputs.at("lang", default: "en")
 #let data = load-resume-data(lang)
 
+// Clean phone number for tel: links (remove spaces and parentheses)
+#let clean-phone = data.basics.phone.replace(" ", "").replace("(", "").replace(")", "")
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // TAILWIND CSS CLASSES (Design Tokens - Vibrante Theme)
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -171,7 +174,7 @@
         #html.h3(class: "text-sm font-bold " + tw.primary-text + " mb-3")[#t("contact", lang)]
         #html.address(class: "not-italic space-y-2")[
           #html.a(href: "mailto:" + data.basics.email, class: "flex items-center gap-2 text-sm " + tw.accent-text + " hover:text-orange-600 hover:underline")[#nf-icon-html("email") #data.basics.email]
-          #html.span(class: "flex items-center gap-2 text-sm text-slate-500")[#nf-icon-html("phone") #data.basics.phone]
+          #html.a(href: "tel:" + clean-phone, class: "flex items-center gap-2 text-sm " + tw.accent-text + " hover:text-orange-600 hover:underline")[#nf-icon-html("phone") #data.basics.phone]
           #html.span(class: "flex items-center gap-2 text-sm text-slate-500")[#nf-icon-html("location") #data.basics.location.city, #data.basics.location.region]
           #html.a(href: data.basics.url, class: "flex items-center gap-2 text-sm " + tw.accent-text + " hover:text-orange-600 hover:underline", target: "_blank")[#nf-icon-html("website") Website]
         ]
